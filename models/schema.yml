@@ -2,8 +2,8 @@
 version: 2
 
 sources:
-  - name: f1_raw 
-    schema: python_dataset 
+  - name: python_dataset 
+    schema: python_dataset
     tables:
       - name: all_pratice_sessions
         identifier: all_practice_sessions
