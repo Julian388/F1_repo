@@ -1,10 +1,14 @@
-with source as (
+with 
+
+source as (
+
     select * from {{ source('python_dataset', 'all_practice_sessions') }}
+
 ),
 
 renamed as (
+
     select
-        `Row` as row_number,
         raceId as race_id,
         year,
         round,
@@ -24,8 +28,9 @@ renamed as (
         intervalMillis as interval_millis,
         laps,
         `session`
+
     from source
+
 )
 
 select * from renamed
-
