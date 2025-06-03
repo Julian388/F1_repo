@@ -3,10 +3,7 @@ version: 2
 
 sources:
   - name: python_dataset
-<<<<<<< HEAD
     schema: f1_raw
-=======
->>>>>>> df5a7607e8b84d4dd269ed29e716bce8df0bda5c
     tables:
       - name: all_practice_sessions
         identifier: all_practice_sessions
