@@ -10,7 +10,7 @@ renamed as (
 
     select
         year,
-        driverid as drive_id,
+        driverid as driver_id,
         positionnumber as position_number,
         bestraceresult as best_race_result,
         totalracestarts as total_race_starts,
