@@ -9,6 +9,13 @@ source as (
 renamed as (
 
     select
+        id,
+        name,
+        fullname,
+        shortname,
+        abbreviation,
+        countryid,
+        totalracesheld
 
     from source
 
