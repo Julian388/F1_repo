@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('f1_raw', 'all_pratice_sessions') }}
+    select * from {{ source('python_dataset', 'all_practice_sessions') }}
 
 ),
 

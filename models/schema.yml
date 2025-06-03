@@ -2,10 +2,9 @@
 version: 2
 
 sources:
-  - name: f1_raw 
-    schema: python_dataset 
+  - name: python_dataset
     tables:
-      - name: all_pratice_sessions
+      - name: all_practice_sessions
         identifier: all_practice_sessions
         description: "L'ensemble des essais depuis 2014"
       - name: constructors
@@ -18,10 +17,10 @@ sources:
         identifier: f1db_grands_prix
         description: "infos sur les courses depuis 2014"
       - name: race_constructor_standings
-        identifier: races_constructor_standings
+        identifier: f1db_races_constructor_standings
         description: "évolution des courses des écuries depuis 2014"
       - name: races_driver_standings
-        identifier: f1db_races_constructor_standings
+        identifier: f1db_races_driver_standings
         description: "évolution des courses des pilotes depuis 2014"
       - name: races_fastest_laps
         identifier: f1db_races_fastest_laps
@@ -40,7 +39,7 @@ sources:
         description: "évolution des saisons des constructeurs depuis 2014"
       - name: seasons_constructors
         identifier: f1db_seasons_constructors
-        description: "toutes les seaisons des constructeurs depuis 2014"
+        description: "toutes les saisons des constructeurs depuis 2014"
       - name: seasons_driver_standings
         identifier: f1db_seasons_driver_standings
         description: "évolution des saisons des pilotes depuis 2014"
