@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('python_dataset', 'seasons_constructor_standings') }}
+    select * from {{ source('python_dataset', 'seasons_driver_standings') }}
 
 ),
 
@@ -13,8 +13,7 @@ renamed as (
         positiondisplayorder as position_display_order,
         positionnumber as position_number,
         positiontext as position_text,
-        constructorid as constructor_id,
-        enginemanufacturerid as engine_manufacture_id,
+        driverid as drive_id,
         points
 
     from source
