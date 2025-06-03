@@ -15,7 +15,7 @@ renamed as (
         shortname,
         abbreviation,
         countryid as country_id,
-        totalracesheld
+        totalracesheld as total_race_sheld
 
     from source
 
