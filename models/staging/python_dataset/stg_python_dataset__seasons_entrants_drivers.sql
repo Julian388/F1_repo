@@ -10,10 +10,8 @@ renamed as (
 
     select
         year,
-        entrantid as entrant_id,
         constructorid as constructor_id,
-        enginemanufacturerid as engine_manufacture_id,
-        driverid as drive_id,
+        driverid as driver_id,
         rounds as rounds,
         roundstext as rounds_test,
         testdriver as test_driver

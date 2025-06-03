@@ -11,7 +11,6 @@ renamed as (
     select
         id as id,
         name as name,
-        fullName as full_name,
         countryId as country_id,
         bestChampionshipPosition as best_championship_position,
         bestStartingGridPosition as best_starting_grid_position,
