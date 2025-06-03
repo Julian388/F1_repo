@@ -12,9 +12,7 @@ renamed as (
         raceid as race_id,
         year,
         round,
-        positiondisplayorder as position_display_order,
         positionnumber as position_number,
-        positiontext as position_text,
         driverid as driver_id,
         points,
         positionsgained as positions_gained
