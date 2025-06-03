@@ -3,8 +3,7 @@ version: 2
 
 sources:
   - name: f1_raw 
-    database: f1-audi-2026
-    schema: f1-audi-2026.python_dataset 
+    schema: python_dataset 
     tables:
       - name: all_pratice_sessions
         identifier: all_practice_sessions
