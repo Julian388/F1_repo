@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('python_dataset', 'seasons_constructor_standings') }}
+    select * from {{ source('python_dataset', 'race_constructor_standings') }}
 
 ),
 
