@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('f1_raw', 'races_starting_grid_positions') }}
+    select * from {{ source('python_dataset', 'races_starting_grid_positions') }}
 
 ),
 

@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('f1_raw', 'grands_prix') }}
+    select * from {{ source('python_dataset', 'grands_prix') }}
 
 ),
 
@@ -14,7 +14,7 @@ renamed as (
         fullname,
         shortname,
         abbreviation,
-        countryid,
+        countryid as country_id,
         totalracesheld
 
     from source
