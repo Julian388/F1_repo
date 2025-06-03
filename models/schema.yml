@@ -3,7 +3,6 @@ version: 2
 
 sources:
   - name: python_dataset
-    schema: f1_raw
     tables:
       - name: all_practice_sessions
         identifier: all_practice_sessions
