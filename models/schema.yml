@@ -1,5 +1,60 @@
-version: 2
- sources:
-   - name: 
 
-    
+version: 2
+
+sources:
+  - name: f1_raw 
+    database: f1-audi-2026
+    schema: f1-audi-2026.python_dataset 
+    tables:
+      - name: all_pratice_sessions
+        identifier: all_practice_sessions
+        description: "L'ensemble des essais depuis 2014"
+      - name: constructors
+        identifier: f1db_constructors
+        description: "toutes les infos sur les constructeurs depuis 2014"
+      - name: drivers
+        identifier: f1db_drivers
+        description: "infos sur les pilotes depuis 2014"
+      - name: grands_prix
+        identifier: f1db_grands_prix
+        description: "infos sur les courses depuis 2014"
+      - name: race_constructor_standings
+        identifier: races_constructor_standings
+        description: "évolution des courses des écuries depuis 2014"
+      - name: races_driver_standings
+        identifier: f1db_races_constructor_standings
+        description: "évolution des courses des pilotes depuis 2014"
+      - name: races_fastest_laps
+        identifier: f1db_races_fastest_laps
+        description: "évolution des tours les plus rapides depuis 2014"
+      - name: races_pit_stops
+        identifier: f1db_races_pit_stops
+        description: "évolution des pitstop depuis depuis 2014"
+      - name: races_race_results
+        identifier: f1db_races_race_results
+        description: "évolution des résultats des courses depuis 2014"
+      - name: races_starting_grid_positions
+        identifier: f1db_races_starting_grid_positions
+        description: "évolution des positions de départs depuis 2014"
+      - name: seasons_constructor_standings
+        identifier: f1db_seasons_constructor_standings
+        description: "évolution des saisons des constructeurs depuis 2014"
+      - name: seasons_constructors
+        identifier: f1db_seasons_constructors
+        description: "toutes les seaisons des constructeurs depuis 2014"
+      - name: seasons_driver_standings
+        identifier: f1db_seasons_driver_standings
+        description: "évolution des saisons des pilotes depuis 2014"
+      - name: seasons_drivers
+        identifier: f1db_seasons_drivers
+        description: "saisons des pilotes depuis 2014"
+      - name: seasons_entrants_drivers
+        identifier: f1db_seasons_entrants_drivers
+        description: "infos sur les courses où les pilotes ont participés et les changements en cours de saison 2014"
+      - name: races_with_context
+        identifier: races_with_context
+        description: "informations sur toutes les courses depuis 2014"
+      - name: sprint_merged_results
+        identifier: sprint_merged_results
+        description: "informations sur tous les sprint depuis 2014"
+ 
