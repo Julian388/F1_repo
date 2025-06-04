@@ -16,7 +16,6 @@ renamed as (
         bestStartingGridPosition as best_starting_grid_position,
         bestRaceResult as best_race_result,
         totalChampionshipWins as total_championship_wins,
-        totalRaceEntries as total_race_entries,
         totalRaceStarts as total_race_starts,
         totalRaceWins as total_race_wins,
         total1And2Finishes as total_1_and_2_finishes,
