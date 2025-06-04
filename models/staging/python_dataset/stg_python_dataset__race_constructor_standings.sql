@@ -9,13 +9,13 @@ source as (
 renamed as (
 
     select
+        raceid,
         year,
-        positiondisplayorder as position_display_order,
+        round,
         positionnumber as position_number,
-        positiontext as position_text,
         constructorid as constructor_id,
-        enginemanufacturerid as engine_manufacture_id,
-        points
+        points,
+        positionsgained as positions_gained
 
     from source
 
