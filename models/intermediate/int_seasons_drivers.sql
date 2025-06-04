@@ -2,7 +2,7 @@
 
 SELECT 
 year,
-drive_id AS driver_id,
+driver_id,
 CAST (position_number AS INT64) AS position_number,
 CAST (best_race_result AS INT64) AS best_race_result,
 total_race_starts,
