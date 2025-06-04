@@ -11,7 +11,7 @@ renamed as (
     select
         year,
         positionnumber as position_number,
-        driverid as drive_id,
+        driverid as driver_id,
         points
 
     from source
