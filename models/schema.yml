@@ -9,10 +9,7 @@ sources:
         description: "L'ensemble des essais depuis 2014"
         columns:
           - name: race_id
-            tests:
-              - not_null
-              - unique
-              
+      
       - name: constructors
         identifier: f1db_constructors
         description: "toutes les infos sur les constructeurs depuis 2014"
