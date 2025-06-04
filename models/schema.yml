@@ -25,9 +25,6 @@ sources:
       - name: races_fastest_laps
         identifier: f1db_races_fastest_laps
         description: "évolution des tours les plus rapides depuis 2014"
-      - name: races_pit_stops
-        identifier: f1db_races_pit_stops
-        description: "évolution des pitstop depuis depuis 2014"
       - name: races_race_results
         identifier: f1db_races_race_results
         description: "évolution des résultats des courses depuis 2014"
