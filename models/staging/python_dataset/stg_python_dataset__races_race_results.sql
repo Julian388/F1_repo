@@ -23,7 +23,6 @@ renamed as (
         timepenaltymillis as time_penalty_millis,
         gap,
         gapmillis as gap_millis,
-        gaplaps as gap_laps,
         reasonretired as reason_retired,
         points,
         poleposition as pole_position,
