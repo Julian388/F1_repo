@@ -52,4 +52,9 @@ sources:
       - name: sprint_merged_results
         identifier: sprint_merged_results
         description: "informations sur tous les sprint depuis 2014"
- 
+      - name: weather_2018_2025
+        identifier: weather_2018_2025
+        description: "weather_2018_2025"
+      - name: pitstops_2018_2025
+        identifier: pitstops_2018_2025
+        description: "pitstops_2018_2025"
