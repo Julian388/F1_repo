@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        raceid,
+        raceid as race_id,
         year,
         round,
         positionnumber as position_number,
