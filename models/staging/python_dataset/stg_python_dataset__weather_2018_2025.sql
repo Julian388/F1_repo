@@ -17,7 +17,7 @@ renamed as (
         tracktemp as track_temp,
         winddirection as wind_direction,
         windspeed as wind_speeed,
-        "round number" as round_number,
+        `round number` as round_number,
         year
 
     from source
