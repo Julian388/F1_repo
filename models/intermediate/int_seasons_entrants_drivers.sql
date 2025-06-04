@@ -4,7 +4,7 @@
 SELECT 
 year,
 constructor_id,
-drive_id AS driver_id,
+driver_id,
 rounds,
 rounds_test,
 test_driver
