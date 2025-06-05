@@ -2,6 +2,7 @@ SELECT
 id
 , year
 , round
+, CONCAT(CAST(year AS STRING), '-', CAST(round AS STRING)) as race_key
 , SAFE.PARSE_DATE('%Y-%m-%d', date) AS date
 , grand_prix_id
 , qualifying_format

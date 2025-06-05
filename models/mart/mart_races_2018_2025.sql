@@ -5,10 +5,11 @@
 
 with race_context as (
 
-    select * 
-    from {{ ref('int_races') }}
-    where year between 2018 and 2025
-
+    select
+    *,
+    FROM {{ ref('int_races') }}
+    WHERE year BETWEEN 2018 AND 2025
+  
 )
 
 select *
