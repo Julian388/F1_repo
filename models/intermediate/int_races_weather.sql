@@ -29,5 +29,6 @@ SELECT
   wind_speeed as wind_speed,
   round_number,
   year
+  , CONCAT(CAST(year AS STRING), '-', CAST(round_number AS STRING)) AS gp_id
 FROM {{ ref('stg_python_dataset__weather_2018_2025') }}
 ORDER BY year DESC, round_number ASC, time ASC
