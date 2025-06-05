@@ -4,7 +4,7 @@ WITH source AS (
 )
 
 SELECT
-    CONCAT(CAST(race_id AS STRING), '_', CAST(driver_id AS STRING), '_', CAST(year AS STRING), '_', CAST(round AS STRING)) AS composite_key,
+    CONCAT(CAST(race_id AS STRING), '_', CAST(driver_id AS STRING), '_', CAST(year AS STRING), '_', CAST(round AS STRING)) AS key,
     race_id,
     year,
     round,
