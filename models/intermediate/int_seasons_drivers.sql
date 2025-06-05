@@ -3,6 +3,7 @@
 SELECT 
 year,
 driver_id,
+CONCAT(CAST(year AS STRING),'-', CAST(driver_id AS STRING)) AS ss_driver_id,
 CAST (position_number AS INT64) AS position_number,
 CAST (best_race_result AS INT64) AS best_race_result,
 total_race_starts,

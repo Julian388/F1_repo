@@ -6,7 +6,7 @@ SELECT
   COUNT(*) AS total_laps,
   SAFE_DIVIDE(COUNTIF(rainfall =true), COUNT(*)) AS rain_ratio,
   CASE 
-    WHEN SAFE_DIVIDE(COUNTIF(rainfall = true), COUNT(*)) >= 0.35 THEN TRUE
+    WHEN SAFE_DIVIDE(COUNTIF(rainfall = true), COUNT(*)) > 0.30 THEN TRUE
     ELSE FALSE
   END AS rain_flag
 FROM {{ ref('int_races_weather') }}
