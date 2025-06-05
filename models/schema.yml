@@ -9,7 +9,9 @@ sources:
         description: "L'ensemble des essais depuis 2014"
         columns:
           - name: race_id
-      
+      - name: pit_stops
+        identifier: f1db_races_pit_stops
+        description: "toutes les infos sur pit stops"
       - name: constructors
         identifier: f1db_constructors
         description: "toutes les infos sur les constructeurs depuis 2014"
