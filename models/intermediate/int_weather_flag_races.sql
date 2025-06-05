@@ -8,6 +8,6 @@ SELECT
   CASE 
     WHEN SAFE_DIVIDE(COUNTIF(rainfall = true), COUNT(*)) >= 0.35 THEN TRUE
     ELSE FALSE
-  END AS pluie_flag
+  END AS rain_flag
 FROM {{ ref('int_races_weather') }}
 GROUP BY year, round_number
