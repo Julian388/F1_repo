@@ -6,6 +6,8 @@ race_id
 , driver_number
 , constructor_id
 , CAST(lap AS INT64) AS lap_nb
+, time_millis 
+
 -- convertir en min,sec,et milisec
 , CASE
   WHEN time IS NULL OR time = '' THEN NULL
