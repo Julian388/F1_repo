@@ -15,5 +15,5 @@ id
 , constructors_championship_decider
 , country_code_alpha2
 
-FROM {{ ref('stg_python_dataset__races_with_context') }}
+FROM {{ ref('stg_python_dataset__races_full_all_years') }}
 order by year DESC, round ASC
