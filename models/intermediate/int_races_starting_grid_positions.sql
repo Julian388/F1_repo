@@ -1,26 +1,28 @@
-with source as (
-    select * from {{ ref('stg_python_dataset__races_starting_grid_positions') }}
+WITH source AS (
+    SELECT * 
+    FROM {{ ref('stg_python_dataset__races_starting_grid_positions') }}
 )
 
-select
+SELECT
+    CONCAT(CAST(race_id AS STRING), '_', CAST(driver_id AS STRING), '_', CAST(year AS STRING), '_', CAST(round AS STRING)) AS key,
     race_id,
     year,
     round,
-    cast(position_number as int64) as position_number,
+    CAST(position_number AS INT64) AS position_number,
     driver_number,
     driver_id,
     constructor_id,
-    cast(qualification_position_number as int64) as qualification_position_number,
-    cast(grid_penalty_positions as int64) as grid_penalty_positions,
+    CAST(qualification_position_number AS INT64) AS qualification_position_number,
+    CAST(grid_penalty_positions AS INT64) AS grid_penalty_positions,
 
-    case
-        when time is null or trim(time) = '' then null
-        when instr(time, ':') > 0 then PARSE_TIME('%M:%E*S', time)
-        else PARSE_TIME('%H:%M:%E*S', CONCAT('00:00:', time))
-    end as time,
+    CASE
+        WHEN time IS NULL OR TRIM(time) = '' THEN NULL
+        WHEN INSTR(time, ':') > 0 THEN PARSE_TIME('%M:%E*S', time)
+        ELSE PARSE_TIME('%H:%M:%E*S', CONCAT('00:00:', time))
+    END AS time,
 
-    cast(time_millis as int64) as time_millis
+    CAST(time_millis AS INT64) AS time_millis
 
-from source
+FROM source
 
-order by year desc, round, position_number
+ORDER BY year DESC, round, position_number
