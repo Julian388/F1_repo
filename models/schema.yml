@@ -51,9 +51,9 @@ sources:
       - name: seasons_entrants_drivers
         identifier: f1db_seasons_entrants_drivers
         description: "infos sur les courses où les pilotes ont participés et les changements en cours de saison 2014"
-      - name: races_with_context
-        identifier: races_with_context
-        description: "informations sur toutes les courses depuis 2014"
+      - name: races_full_all_years
+        identifier: races_full_all_years
+        description: "informations sur toutes les courses depuis 1950"
       - name: sprint_merged_results
         identifier: sprint_merged_results
         description: "informations sur tous les sprint depuis 2014"
