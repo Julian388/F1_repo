@@ -38,7 +38,7 @@ sources:
         description: "évolution des positions de départs depuis 2014"
       - name: seasons_constructor_standings
         identifier: f1db_seasons_constructor_standings
-        description: "évolution des saisons des constructeurs depuis 2014"
+        description: "Données pas utilisé pour le moment évolution des saisons des constructeurs depuis 2014"
       - name: seasons_constructors
         identifier: f1db_seasons_constructors
         description: "toutes les saisons des constructeurs depuis 2014"
