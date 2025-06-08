@@ -1,0 +1,30 @@
+{{ config(
+    materialized = 'table',
+    description = 'weather with pitstops from 2018 to 2025'
+) }}
+
+with weather_pit as (
+    SELECT
+    *
+    FROM {{ ref('weather_pitstops') }})
+
+SELECT 
+  w.ear,
+  w.round,
+         as gp
+         as time_time,
+  w.time,
+  w.rainfall,
+  w.driver,
+  w.pit_time,
+  w.pitstop_nb,
+  w.ap_nb,
+  w.tyre_type,
+  w.tyre_life,
+  w.track_status,
+
+FROM weather_pit as w
+
+
+ORDER BY
+  p.year DESC, p.round ASC, w.time ASC
