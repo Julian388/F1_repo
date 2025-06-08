@@ -3,6 +3,7 @@ SELECT
   p.round, 
   w.time,
   w.rainfall,
+  w.track_temp,
   p.driver,
   P. pit_in_time as pit_time,
   P.pitstop_nb,
@@ -16,7 +17,8 @@ SELECT
     WHEN LEFT(CAST(track_status AS STRING), 1) = '6' THEN 'VSCDeployed'
     WHEN LEFT(CAST(track_status AS STRING), 1) = '7' THEN 'VSCEnding'
     ELSE 'Start'
-  END AS track_status
+  END AS track_status,
+  
 
 FROM {{ ref('int_races_weather') }} as w
 LEFT JOIN {{ ref('int_pitstops_2018_2025') }} as p
