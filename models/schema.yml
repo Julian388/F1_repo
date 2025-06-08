@@ -63,3 +63,7 @@ sources:
       - name: pitstops_2018_2025
         identifier: pitstops_2018_2025
         description: "pitstops_2018_2025"
+
+      - name: races_full_all_years
+        identifier: races_full_all_years
+        description: "races_full_all_years"
