@@ -1,13 +1,21 @@
 SELECT 
-  year,
-  round_number,
-  CONCAT(CAST(year AS STRING), '-', CAST(round_number AS STRING)) AS race_key,
+  w.year,
+  w.round_number,
+  race_key,
+  r.grand_prix_id,
+  r.circuit_id,
+  r.circuit_type,
+
+            -- gp name 
+            -- circuit id
+            -- country code
   COUNTIF(rainfall = true) AS rain_laps,
   COUNT(*) AS total_laps,
   SAFE_DIVIDE(COUNTIF(rainfall =true), COUNT(*)) AS rain_ratio,
   CASE 
-    WHEN SAFE_DIVIDE(COUNTIF(rainfall = true), COUNT(*)) > 0.30 THEN TRUE
+    WHEN SAFE_DIVIDE(COUNTIF(rainfall = true), COUNT(*)) > 0.40 THEN TRUE
     ELSE FALSE
   END AS rain_flag
-FROM {{ ref('int_races_weather') }}
-GROUP BY year, round_number
+FROM {{ ref('int_races_weather') }} w
+LEFT JOIN {{ ref('stg_python_dataset__races_full_all_years') }} as r ON w.gp_id = r.race_key
+GROUP BY year, round_number, race_key, grand_prix_id, circuit_id, circuit_type

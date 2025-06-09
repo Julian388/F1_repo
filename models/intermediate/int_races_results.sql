@@ -16,7 +16,7 @@ SELECT
   END AS time,
   SAFE_CAST(time_millis AS INT64) AS time_millis,
   CASE
-    WHEN time_penalty IS NULL OR CAST(time_penalty AS STRING) = '' THEN NULL
+    WHEN rr.time_penalty IS NULL OR CAST(rr.time_penalty AS STRING) = '' THEN NULL
     WHEN REGEXP_CONTAINS(CAST(time_penalty AS STRING), r'^\d+:\d{2}:\d{2}\.\d+$') THEN SAFE.PARSE_TIME('%H:%M:%E*S', CAST(time_penalty AS STRING))
     WHEN REGEXP_CONTAINS(CAST(time_penalty AS STRING), r'^\d+:\d{2}\.\d+$') THEN SAFE.PARSE_TIME('%M:%E*S', CAST(time_penalty AS STRING))
     WHEN REGEXP_CONTAINS(CAST(time_penalty AS STRING), r'^\d+(\.\d+)?$') THEN SAFE.PARSE_TIME('%E*S', CAST(time_penalty AS STRING))
@@ -31,5 +31,6 @@ SELECT
   SAFE_CAST(positions_gained AS INT64) AS positions_gained,
   SAFE_CAST(pit_stops AS INT64) AS pit_stops,
   fastest_lap
-FROM {{ ref('stg_python_dataset__races_race_results') }}
+FROM {{ ref('stg_python_dataset__races_race_results') }} rr
+-- LEFT JOIN {{ ref('stg_python_dataset__races_full_all_years') }} rid ON rr.race_id = rid
 ORDER BY year DESC, round ASC
