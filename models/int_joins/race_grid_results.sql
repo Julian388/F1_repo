@@ -14,10 +14,12 @@ SELECT
     sg.race_id,
     CONCAT(CAST(sg.year AS STRING), '-', CAST(sg.round AS STRING)) AS gp_id,
     CONCAT(CAST(sg.year AS STRING), '-', CAST(sg.round AS STRING), '-', CAST(sg.driver_id AS STRING)) AS gp_driver_id,
+    CONCAT(CAST(sg.year AS STRING), '-', CAST(sg.round AS STRING), '-', CAST(dd.abbreviation AS STRING)) AS gp_driver_abb_id,
     sg.year,
     sg.round,
     sg.driver_id,
     sg.driver_number,
+    dd.abbreviation,
     sg.constructor_id,
     sg.position_number AS grid_position,
     sg.qualification_position_number,
@@ -41,4 +43,5 @@ SELECT
 FROM starting_grid sg
 LEFT JOIN race_results rr
     ON sg.key = rr.key
+LEFT JOIN {{ ref('stg_python_dataset__drivers') }} dd ON sg.driver_id = dd.id
 order by year DESC, round

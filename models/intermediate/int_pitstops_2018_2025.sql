@@ -5,6 +5,7 @@ SELECT
     CAST(lap_number AS INT64) AS lap_number,
     pitstop_nb,
     season as year,
+    CONCAT(CAST(season AS STRING), '-', CAST(round AS STRING), '-', CAST(driver AS STRING)) AS gp_driver_abb_id,
     round,
 
     -- CAST(pit_in_time AS date) AS pit_in_time,

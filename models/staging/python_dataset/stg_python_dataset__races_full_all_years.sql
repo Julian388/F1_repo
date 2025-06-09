@@ -12,6 +12,7 @@ renamed as (
         id,
         year,
         round,
+        CONCAT(CAST(year AS STRING), '-', CAST(round AS STRING)) AS race_key,
         date,
         time,
         grandprixid as grand_prix_id,

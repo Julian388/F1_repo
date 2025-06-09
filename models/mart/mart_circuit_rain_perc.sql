@@ -1,5 +1,5 @@
 select
-    grand_prix_id,
+    r.grand_prix_id,
     COUNT(*) AS total_gp,
     COUNTIF(pf.rain_flag = TRUE) AS nb_gp_rain,
     ROUND(100 * COUNTIF(pf.rain_flag = TRUE) / COUNT(*), 1) AS rain_perc
