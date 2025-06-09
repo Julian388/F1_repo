@@ -11,7 +11,12 @@ with grid_result as (
     gr.gp_id,
     gr.year,
     gr.round,
+    r.country_code_alpha2,
+    r.grand_prix_id,
+    r.circuit_id,
+    r.circuit_type,
     gr.driver_id,
+    gr.abbreviation,
     gr.driver_number,
     gr.constructor_id,
     gr.grid_position,
@@ -33,9 +38,18 @@ with grid_result as (
     gr.pole_position,
     gr.pit_stops,
     gr.fastest_lap,
-    w.rain_flag
+    w.rain_flag,
+    CASE
+        WHEN rain_flag = false THEN positions_gained
+        ELSE null
+    END as dry_positions_gained,
+    CASE
+        WHEN rain_flag = true THEN positions_gained
+        ELSE null
+    END as wet_positions_gained,
     FROM {{ ref('race_grid_results') }} gr
     LEFT JOIN {{ ref('int_weather_flag_races') }} w ON gr.gp_id = w.race_key
+    LEFT JOIN {{ ref('mart_races_2018_2025') }} r ON gr.race_id = r.id
     WHERE gr.year BETWEEN 2018 AND 2025
 
 )
