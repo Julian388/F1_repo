@@ -15,7 +15,13 @@ SELECT
   P. pit_in_time as pit_time,
   P.pitstop_nb,
   p.lap_number as lap_nb,
-  p.tyre_type,
+  CASE 
+    WHEN p.tyre_type = 'MEDIUM' THEN 'MEDIUM'
+    WHEN p.tyre_type ='SOFT|SUPERSOFT|ULTRASOFT|HYPERSOFT' THEN 'SOFT'
+    WHEN p.tyre_type = 'HARD' THEN 'HARD'
+    WHEN p.tyre_type = 'INTERMEDIATE' THEN 'INTERMEDIATE'
+    WHEN p.tyre_type = 'RAIN' THEN 'RAIN' 
+    END AS tyre_type,
   P.tyre_life,
   gr.positions_gained,
   gr.race_position,
