@@ -17,7 +17,10 @@ SELECT
   p.lap_number as lap_nb,
   CASE 
     WHEN p.tyre_type = 'MEDIUM' THEN 'MEDIUM'
-    WHEN p.tyre_type ='SOFT|SUPERSOFT|ULTRASOFT|HYPERSOFT' THEN 'SOFT'
+    WHEN p.tyre_type ='SOFT' THEN 'SOFT'
+    WHEN p.tyre_type ='SUPERSOFT' THEN 'SOFT'
+    WHEN p.tyre_type ='ULTRASOFT' THEN 'SOFT'
+    WHEN p.tyre_type ='HYPERSOFT' THEN 'SOFT'
     WHEN p.tyre_type = 'HARD' THEN 'HARD'
     WHEN p.tyre_type = 'INTERMEDIATE' THEN 'INTERMEDIATE'
     WHEN p.tyre_type = 'RAIN' THEN 'RAIN' 
