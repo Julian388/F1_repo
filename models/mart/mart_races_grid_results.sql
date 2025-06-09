@@ -51,7 +51,6 @@ with grid_result as (
     LEFT JOIN {{ ref('int_weather_flag_races') }} w ON gr.gp_id = w.race_key
     LEFT JOIN {{ ref('mart_races_2018_2025') }} r ON gr.race_id = r.id
     WHERE gr.year BETWEEN 2018 AND 2025
-
 )
 
 select *

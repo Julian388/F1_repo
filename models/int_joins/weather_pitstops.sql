@@ -1,6 +1,11 @@
 SELECT
   w.year,
   p.round, 
+  gr.gp_id,
+  mrs.country_code_alpha2,
+  mrs.grand_prix_id,
+  mrs.circuit_id,
+  mrs.circuit_type,
   w.time,
   w.rainfall,
   w.track_temp,
@@ -32,5 +37,6 @@ LEFT JOIN {{ ref('int_pitstops_2018_2025') }} as p
   ON w.gp_id = p.gp_id -- key créée pour lier les tables
   AND ABS(TIMESTAMP_DIFF(DATETIME('2025-01-01', w.time), DATETIME('2025-01-01', p.pit_in_time), SECOND)) <= 30 -- on prend la différence absolue entre la date et le time de pitstops pour pouvoir les liers lorsque la différence est moins de 30 sec 
 LEFT JOIN {{ ref('race_grid_results') }} as gr ON p.gp_driver_abb_id = gr.gp_driver_abb_id
+LEFT JOIN {{ ref('mart_races_grid_results') }} as mrs ON gr.gp_id = mrs.gp_id
 ORDER BY
   p.year DESC, p.round ASC, w.time ASC
