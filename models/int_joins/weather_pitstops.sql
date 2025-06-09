@@ -21,6 +21,7 @@ SELECT
     WHEN p.tyre_type = 'HARD' THEN 'HARD'
     WHEN p.tyre_type = 'INTERMEDIATE' THEN 'INTERMEDIATE'
     WHEN p.tyre_type = 'RAIN' THEN 'RAIN' 
+    ELSE ""
     END AS tyre_type,
   P.tyre_life,
   gr.positions_gained,
