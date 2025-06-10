@@ -23,7 +23,7 @@ SELECT
     WHEN p.tyre_type ='HYPERSOFT' THEN 'SOFT'
     WHEN p.tyre_type = 'HARD' THEN 'HARD'
     WHEN p.tyre_type = 'INTERMEDIATE' THEN 'INTERMEDIATE'
-    WHEN p.tyre_type = 'RAIN' THEN 'RAIN' 
+    WHEN p.tyre_type = 'WET' THEN 'WET' 
     ELSE ""
     END AS tyre_type,
   P.tyre_life,
