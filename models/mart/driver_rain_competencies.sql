@@ -31,7 +31,7 @@ rain_skill AS (
 
 SELECT
   *,
-  -- Ajouter une métrique score 0 - 100
-  (0.7 * PERCENT_RANK() OVER (ORDER BY pos_diff_rain_vs_dry DESC) + 
+  -- Ajouter une métrique score 0 - 100 : 100 : super ; 0 : nul
+  100 - (0.7 * PERCENT_RANK() OVER (ORDER BY pos_diff_rain_vs_dry DESC) + 
    0.3 * PERCENT_RANK() OVER (ORDER BY laptime_diff_pct ASC)) * 100 AS rain_skill_score
 FROM rain_skill
