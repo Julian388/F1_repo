@@ -1,6 +1,7 @@
 WITH driver_performance AS (
   SELECT
-    driver_id,  -- Virgule manquante ici
+    driver_id,
+    abbreviation,
     -- Performance pluie
     AVG(CASE WHEN rain_flag = true THEN positions_gained END) AS avg_pos_gained_rain,
     AVG(CASE WHEN rain_flag = true THEN race_time_millis END) AS avg_laptime_rain,
@@ -12,7 +13,7 @@ WITH driver_performance AS (
     COUNT(CASE WHEN rain_flag = false THEN 1 END) AS races_dry
   FROM {{ ref('mart_races_grid_results') }}
   WHERE driver_id NOT IN ('nikita-mazepin', 'antonio-giovinazzi', 'kimi-raikkonen','mick-schumacher','nicholas-latifi','robert-kubica','daniil-kvyat','romain-grosjean','daniel-ricciardo','sebastian-vettel')
-  GROUP BY driver_id
+  GROUP BY driver_id, abbreviation
   HAVING COUNT(CASE WHEN rain_flag = false THEN 1 END) >= 3
     AND COUNT(CASE WHEN rain_flag = true THEN 1 END) >= 2
 ),
